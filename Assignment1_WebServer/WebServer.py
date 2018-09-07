@@ -13,7 +13,7 @@ phraseOK = 'OK'
 phraseErr = 'Not Found'
 
 # Server info
-serverPort = 8080
+serverPort = 80
 maxLength = 1024
 basePath = os.path.abspath('')
 
@@ -30,9 +30,14 @@ class HttpRequest(object):
 
         # fileds of request line
         self.__requestLineFields = self.__lines[0].split(sep=sp)
+        print(self.__requestLineFields)
 
     def getUrl(self):
-        return self.__requestLineFields[1]
+        urlLine = self.__requestLineFields[1]
+        index = urlLine.find("localhost")
+        if index >= 0:
+    	    urlLine = urlLine[index+len("localhost"):]
+        return urlLine
 
 # Http Response(object)
 class HttpResponse(object):
