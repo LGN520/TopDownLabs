@@ -30,7 +30,6 @@ class HttpRequest(object):
 
         # fileds of request line
         self.__requestLineFields = self.__lines[0].split(sep=sp)
-        print(self.__requestLineFields)
 
     def getUrl(self):
         urlLine = self.__requestLineFields[1]
@@ -78,6 +77,11 @@ serverSocket.listen(1)
 while(True):
     connectionSocket, clientAddr = serverSocket.accept()
     requestMessageBytes = connectionSocket.recv(maxLength)
+    print(connectionSocket)
+    print(clientAddr)
+    print(len(requestMessageBytes))
+    if len(requestMessageBytes) == 0:
+    	continue
     httpRequest = HttpRequest(requestMessageBytes.decode('utf-8'))
     httpResponse = HttpResponse()
     try:
