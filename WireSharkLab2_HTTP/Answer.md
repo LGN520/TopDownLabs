@@ -23,4 +23,12 @@
     + Q: What is the HTTP status code and phrase returned from the server in response tothis second HTTP GET? Did the server explicitly return the contents of the file? Explain.
         * A: 304, No
 - 3. Retrieving Long Documents
-    + 
+    + Q: How many HTTP GET request messages did your browser send? Which packet number in the trace contains the GET message for the Bill or Rights?
+        * A: 1, No.72
+    + Q: Which packet number in the trace contains the status code and phrase associated with the response to the HTTP GET request?
+        * A: No.168
+    + Q: What is the status code and phrase in the response?
+        * A: 200 OK
+    + Q: How many data-containing TCP segments were needed to carry the single HTTP response and the text of the Bill of Rights?
+        * A: 4
+- 4. HTML Documents with Embedded Objects
