@@ -32,3 +32,12 @@
     + Q: How many data-containing TCP segments were needed to carry the single HTTP response and the text of the Bill of Rights?
         * A: 4
 - 4. HTML Documents with Embedded Objects
+    + Q: How many HTTP GET request messages did your browser send? To which Internet addresses were these GET requests sent?
+        * A: 2, 128.119.245.12
+    + Q: Can you tell whether your browser downloaded the two images serially, or whether they were downloaded from the two web sites in parallel? Explain.
+        * A: Because of the China Firewall, I cant establish tcp connection with the second image server, so there is only one http request for image. While in my point, browser will download the two images in parallel.
+- 5. Authentication
+    + Q: What is the server’s response (status code and phrase) in response to the initial HTTP GET message from your browser?
+        * A: 401, Unauthorized
+    + Q: When your browser’s sends the HTTP GET message for the second time, what new field is included in the HTTP GET message?
+        * A: Authorization field (Authorization: Basic base64Coding...)
